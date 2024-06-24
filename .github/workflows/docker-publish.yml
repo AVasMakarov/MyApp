@@ -57,3 +57,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Converge
+        uses: werf/actions/converge@v2
+        with:
+          kube-config-base64-data: ${{ secrets.KUBE_CONFIG_BASE64_DATA }}

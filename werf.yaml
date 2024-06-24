@@ -1,0 +1,6 @@
+project: prod
+configVersion: 1
+
+---
+image: myapp
+dockerfile: Dockerfile
