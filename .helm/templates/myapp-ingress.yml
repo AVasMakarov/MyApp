@@ -12,7 +12,7 @@ spec:
       http:
         paths:
           - path: /
-            pathType: Prefix
+            pathType: Exact #Prefix
             backend:
               service:
                 name: app-web
