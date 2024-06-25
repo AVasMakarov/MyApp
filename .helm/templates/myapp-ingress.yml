@@ -15,7 +15,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: app-web
+                name: svc-web
                 port:
                   name: web
 #          - path: /api
