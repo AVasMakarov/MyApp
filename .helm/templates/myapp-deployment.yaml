@@ -19,9 +19,6 @@ spec:
       containers:
         - name: app-web
           image: {{ .Values.werf.image.myapp }}
-          ports:
-            - containerPort: 80
-              name: ngnix-port
       terminationGracePeriodSeconds: 30
 
 ---
@@ -34,7 +31,7 @@ spec:
   ports:
     - name: web
       port: 80
-      targetPort: nginx-port
+      targetPort: 80
   selector:
     app: app-web
 #  type: LoadBalancer
