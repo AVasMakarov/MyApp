@@ -35,4 +35,4 @@ spec:
 #      nodePort: 30080
   selector:
     app: app-web
-  type: NodePort
+#  type: NodePort
