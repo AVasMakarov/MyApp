@@ -18,10 +18,3 @@ spec:
                 name: app-web
                 port:
                   name: web
-#          - path: /api
-#            pathType: Exact
-#            backend:
-#              service:
-#                name: svc-back
-#                port:
-#                  name: http
