@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: app-web
-          image: {{ .Values.werf.image.myapp }}
+          image: ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{github.event.release.tag_name }}
       terminationGracePeriodSeconds: 30
 
 ---
