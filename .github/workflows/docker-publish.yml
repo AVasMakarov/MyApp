@@ -61,7 +61,7 @@ jobs:
       - name: Converge
         uses: werf/actions/converge@v2
         env:
-          WERF_SET_IMAGE: "image=${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{github.event.release.tag_name }}"
+          WERF_SET_IMAGE=image="${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{github.event.release.tag_name }}"
 #          WERF_SET_DOCKER_USERNAME: "docker_username=${{ secrets.DOCKER_USERNAME }}"
 #          WERF_SET_DOCKER_IMAGE: "docker_image=${{ env.IMAGE_NAME }}"
 #          WERF_SET_DOCKER_TAG: "docker_tag=${{github.event.release.tag_name }}"

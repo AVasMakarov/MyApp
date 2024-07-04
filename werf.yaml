@@ -1,6 +1,6 @@
 project: prod
 configVersion: 1
-#image: myapp
+#image: "${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{github.event.release.tag_name }}"
 #username: avasmakarov
 #---
 #image: myapp
