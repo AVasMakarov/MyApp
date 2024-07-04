@@ -60,9 +60,13 @@ jobs:
 
       - name: Converge
         uses: werf/actions/converge@v2
-        env:
-          WERF_SET_DOCKER_USERNAME: "docker_username=${{ secrets.DOCKER_USERNAME }}"
-          WERF_SET_DOCKER_IMAGE: "docker_image=${{ env.IMAGE_NAME }}"
-          WERF_SET_DOCKER_TAG: "docker_tag=${{github.event.release.tag_name }}"
+#        env:
+#          WERF_SET_DOCKER_USERNAME: "docker_username=${{ secrets.DOCKER_USERNAME }}"
+#          WERF_SET_DOCKER_IMAGE: "docker_image=${{ env.IMAGE_NAME }}"
+#          WERF_SET_DOCKER_TAG: "docker_tag=${{github.event.release.tag_name }}"
         with:
           kube-config-base64-data: ${{ secrets.KUBE_CONFIG_BASE64_DATA }}
+          env:
+            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+            DOCKER_IMAGE: ${{ env.IMAGE_NAME }}
+            DOCKER_TAG: ${{github.event.release.tag_name }}
