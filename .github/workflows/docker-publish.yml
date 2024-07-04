@@ -61,6 +61,6 @@ jobs:
       - name: Converge
         uses: werf/actions/converge@v2
         env:
-          WERF_SET_IMAGE=image="${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}" #${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{github.event.release.tag_name }}"
+          WERF_SET_STRING_IMAGE=image="${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}" #${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{github.event.release.tag_name }}"
         with:
           kube-config-base64-data: ${{ secrets.KUBE_CONFIG_BASE64_DATA }}
