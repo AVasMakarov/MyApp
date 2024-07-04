@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: app-web
-          image: {{ .Values.werf.env.DOCKER_USERNAME }}/{{ .Values.werf.env.DOCKER_IMAGE }}:{{ .Values.werf.env.DOCKER_TAG }}
+          image: {{ .Values.werf.env  }}
       terminationGracePeriodSeconds: 30
 
 ---

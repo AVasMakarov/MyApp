@@ -66,7 +66,4 @@ jobs:
 #          WERF_SET_DOCKER_TAG: "docker_tag=${{github.event.release.tag_name }}"
         with:
           kube-config-base64-data: ${{ secrets.KUBE_CONFIG_BASE64_DATA }}
-          env:
-            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-            DOCKER_IMAGE: ${{ env.IMAGE_NAME }}
-            DOCKER_TAG: ${{github.event.release.tag_name }}
+          env: "${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{github.event.release.tag_name }}"
