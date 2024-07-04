@@ -1,7 +1,7 @@
 project: prod
 configVersion: 1
-image: myapp
-username: avasmakarov
+#image: myapp
+#username: avasmakarov
 #---
 #image: myapp
 #dockerfile: Dockerfile
