@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: app-web
-          image: "${{ image  }}"
+          image: "${{ env.image }}"
       terminationGracePeriodSeconds: 30
 
 ---
