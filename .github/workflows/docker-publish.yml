@@ -2,10 +2,10 @@ name: Docker Image Publish
  
 on:
   push:
-#    branches: [ "master" ]
+#    branches: [ "master" ] # закомментировал чтобы образ собирался только при пуше с тэгом
     tags: [ 'v*.*.*' ]
-#  pull_request:
-#    branches: [ "master" ]
+#  pull_request:            # закомментировал чтобы образ собирался только при пуше с тэгом
+#    branches: [ "master" ] # закомментировал чтобы образ собирался только при пуше с тэгом
 
 env:
   REGISTRY: docker.io
@@ -61,6 +61,6 @@ jobs:
       - name: Converge
         uses: werf/actions/converge@v2
         env:
-          WERF_SET_STRING_IMAGE: image="${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.version }}" #${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{github.event.release.tag_name }}"
+          WERF_SET_STRING_IMAGE: image="${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.version }}" #переменная с именем образа
         with:
           kube-config-base64-data: ${{ secrets.KUBE_CONFIG_BASE64_DATA }}
